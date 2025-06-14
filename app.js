@@ -25,7 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
       messageDisplay.textContent = '🎉 Congratulations! You guessed it right!';
       submitGuessButton.style.display = 'none';
       restartButton.style.display = 'inline-block';
-      guessInput.disabled = true; // Disable input on win
+      guessInput.disabled = true;
+      guessInput.style.display = 'none'; // Hide input on win
     } else {
       lives--;
       if (lives > 0) {
@@ -37,7 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
         messageDisplay.textContent = `😞 Game Over! The correct number was ${targetNumber}.`;
         submitGuessButton.style.display = 'none';
         restartButton.style.display = 'inline-block';
-        guessInput.disabled = true; // Disable input on game over
+        guessInput.disabled = true;
+        guessInput.style.display = 'none'; // Hide input on game over
         updateHearts();
       }
     }
@@ -51,7 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
     updateHearts();
     messageDisplay.textContent = 'Guess a number between 1 and 10!';
     guessInput.value = '';
-    guessInput.disabled = false; // Re-enable input
+    guessInput.disabled = false;
+    guessInput.style.display = 'inline-block'; // Show input again
     submitGuessButton.style.display = 'inline-block';
     restartButton.style.display = 'none';
   }
